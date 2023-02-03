@@ -113,3 +113,7 @@ API
 Training
 Blog
 About
+
+# Rider things
+.idea
+.idea/*
