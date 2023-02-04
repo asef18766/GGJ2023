@@ -6,14 +6,27 @@ namespace Bag
 {
     public enum ItemID
     {
-        Meow = 87,
-        Wolf
+        NormalSeed = 0,
+        RGBSeed,
+        ErrorSeed,
+        ADSeed,
+        AccChip,
+        CloudChip,
+        ShadowChip
     }
     [CreateAssetMenu(menuName = "Bag")]
     public class Bag : ScriptableObjectSingleton<Bag>
     {
         public readonly Dictionary<int, int> Inventory = new();
-        
+
+        private void OnEnable()
+        {
+            for (var i = 0; i <= (int) ItemID.ShadowChip; ++i)
+            {
+                Inventory.Add(i, 99);
+            }
+        }
+
         public void AddItem(int id)
         {
             if(!Inventory.ContainsKey(id))

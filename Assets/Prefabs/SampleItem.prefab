@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 8255522452912023915}
   - component: {fileID: 8255522452912023913}
   - component: {fileID: 8255522452912023910}
+  - component: {fileID: 4240261056143293161}
   m_Layer: 5
   m_Name: SampleItem
   m_TagString: Untagged
@@ -175,6 +176,19 @@ MonoBehaviour:
   _canvasGroup: {fileID: 8255522452912023910}
   itemCntText: {fileID: 8255522451873929164}
   itemCnt: 0
+  itemIcons:
+  - {fileID: 21300000, guid: d883a0db84294a34fa285c206d011553, type: 3}
+  - {fileID: 21300000, guid: d883a0db84294a34fa285c206d011553, type: 3}
+  - {fileID: 21300000, guid: c9bbf6c58c8c7c8488c4c6b066cc3ec3, type: 3}
+  - {fileID: 21300000, guid: 81e261f298f9e7145b6bddaabc04610e, type: 3}
+  - {fileID: 21300000, guid: b21205568be4ceb4aae0b6b147423890, type: 3}
+  - {fileID: 21300000, guid: b6c9ef27bd3dd46429ead20b3fe719ca, type: 3}
+  - {fileID: 21300000, guid: 582fd7e2fbeff5145bb85e1973a8b2aa, type: 3}
+  normalSeedSuccessRate: 1
+  errorSeedSuccessRate: 0.2
+  adSeedSuccessRate: 0.3
+  cloudMultChance: 2
+  accTimeMultiplier: 2
 --- !u!225 &8255522452912023910
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -187,3 +201,21 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &4240261056143293161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8255522452912023917}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 008fefed4a414482b35abeb1c6431c06, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  goodGraphicCard: 0
+  cmyk:
+  - {r: 1, g: 0, b: 0.95521784, a: 1}
+  - {r: 1, g: 1, b: 0, a: 1}
+  - {r: 0, g: 1, b: 1, a: 1}
+  - {r: 0.16824007, g: 1, b: 0, a: 1}

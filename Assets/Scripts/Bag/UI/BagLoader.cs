@@ -13,7 +13,7 @@ namespace Bag.UI
             {
                 var obj = Instantiate(draggableItem, listTransform);
                 var dgi = obj.GetComponent<DraggableItem>();
-                dgi.InitProps(itemID, itemCnt);
+                dgi.InitProps((ItemID) Enum.ToObject(typeof(ItemID), itemID), itemCnt);
             }
         }
 
