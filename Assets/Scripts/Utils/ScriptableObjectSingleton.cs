@@ -10,20 +10,8 @@ namespace Utils
         {
             get
             {
-                if (_sInstance != null) return _sInstance;
-                var findAssets = AssetDatabase.FindAssets($"t:{typeof(T).Name}");
-                if (findAssets == null || findAssets.Length == 0)
-                {
-                    Debug.LogError($"Please create ScriptableObject typeof {typeof(T)} first...");
-                }
-                else if (findAssets.Length > 1)
-                {
-                    Debug.LogError($"ScriptableObject typeof {typeof(T)} exist multiple，please check they...");
-                }
-                else
-                {
-                    _sInstance = AssetDatabase.LoadAssetAtPath<T>(AssetDatabase.GUIDToAssetPath(findAssets[0]));
-                }
+                if (_sInstance == null);
+                    _sInstance = Resources.Load<T>(typeof(T).Name);
                 return _sInstance;
             }
         }

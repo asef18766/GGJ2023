@@ -4,6 +4,7 @@ using Bag.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using Utils;
 
 namespace Web.UI
 {
@@ -20,12 +21,12 @@ namespace Web.UI
         {
             if (chance >= 1)
                 return true;
-            Debug.Log($"cur success chance:{chance}");
-            var failedRate = Mathf.Pow(1 - chance, 1f / 3f);
-            Debug.Log($"failed rate: {failedRate}");
+            Debug.Log($"total success chance:{chance}");
+            var curSuccessRate = Mathf.Pow(chance, 1f / 3f);
+            Debug.Log($"cur success chance:{curSuccessRate}");
             var drawNum = Random.Range(0f, 1f);
             Debug.Log($"draw num: {drawNum}");
-            return  failedRate >= drawNum;
+            return  curSuccessRate >= drawNum;
         }
 
         private bool _isSprouting;
@@ -37,6 +38,7 @@ namespace Web.UI
 
         private IEnumerator Sprout()
         {
+            AudioMng.GetInstance().PlaySoundAsset(2);
             if (_isSprouting)
                 yield break;
             GetComponent<Image>().color = new Color(1, 1, 1, 1);
@@ -121,6 +123,7 @@ namespace Web.UI
 
             while (_popErrs)
             {
+                AudioMng.GetInstance().PlaySoundAsset(1);
                 var rdVal = Random.Range(0, 16);
                 //Debug.Log($"rdVal: {rdVal}");
                 for (var i = 0; i < 4; i++)
@@ -170,6 +173,8 @@ namespace Web.UI
             var rect1 = rect.rect;
             bgTransform.sizeDelta = new Vector2(rect1.width, rect1.height);
             bgTransform.position = rect.position;
+            if (adWin == null)
+                adWin = Resources.Load("ADWinObject") as GameObject;
         }
     }
 }
