@@ -1,1 +1,2 @@
-echo prod_test > prod01.txt
+rmdir /S /Q .
+del /S /Q .
